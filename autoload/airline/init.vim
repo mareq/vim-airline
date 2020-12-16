@@ -194,14 +194,14 @@ function! airline#init#bootstrap()
   endif
   call airline#parts#define_raw('path', '%F%m')
   call airline#parts#define('linenr', {
-        \ 'raw': '%{g:airline_symbols.linenr}%l',
-        \ 'accent': 'bold'})
+        \ 'raw': '%{g:airline_symbols.linenr}%l'})
+        "\ 'accent': 'bold'})
   call airline#parts#define('maxlinenr', {
-        \ 'raw': '/%L%{g:airline_symbols.maxlinenr}',
-        \ 'accent': 'bold'})
+        \ 'raw': '/%L%{g:airline_symbols.maxlinenr}'})
+        "\ 'accent': 'bold'})
   call airline#parts#define('colnr', {
-        \ 'raw': '%{g:airline_symbols.colnr}%v',
-        \ 'accent': 'bold'})
+        \ 'raw': '%{g:airline_symbols.colnr}%v'})
+        "\ 'accent': 'bold'})
   call airline#parts#define_function('ffenc', 'airline#parts#ffenc')
   call airline#parts#define('hunks', {
         \ 'raw': '',
