@@ -199,7 +199,14 @@ function! airline#extensions#tabline#title(n)
     if len(curbuf) ==  0
       call add(curbuf, tabpagebuflist()[0])
     endif
-    return airline#extensions#tabline#get_buffer_name(curbuf[0], curbuf)
+    " This is needed to display name of the current buffer instead of the name of the first buffer
+    " (plus show only file name and extension instead of the full path)
+    "return airline#extensions#tabline#get_buffer_name(curbuf[0], curbuf)
+    if len(curbuf) > (winnr - 1)
+      return fnamemodify(airline#extensions#tabline#get_buffer_name(curbuf[winnr - 1], curbuf), ":t")
+    else
+      return fnamemodify(airline#extensions#tabline#get_buffer_name(curbuf[0], curbuf), ":t")
+    endif
   endif
 
   return title
