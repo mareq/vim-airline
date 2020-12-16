@@ -272,7 +272,7 @@ function! airline#extensions#branch#head()
           \ b:buffer_vcs_config[vcs].dirty
       let additional = g:airline_symbols['dirty']
     endif
-    let b:airline_head .= additional
+    let b:airline_head .= ' '.additional
   endfor
 
   if empty(heads)

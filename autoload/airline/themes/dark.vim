@@ -61,7 +61,7 @@ let g:airline#themes#dark#palette = {}
 " airline_x/y/z, respectively.
 
 " The dark.vim theme:
-let s:airline_a_normal   = [ '#00005f' , '#dfff00' , 17  , 190 ]
+"let s:airline_a_normal   = [ '#00005f' , '#dfff00' , 17  , 190 ]
 let s:airline_b_normal   = [ '#ffffff' , '#444444' , 255 , 238 ]
 let s:airline_c_normal   = [ '#9cffd3' , '#202020' , 85  , 234 ]
 let g:airline#themes#dark#palette.normal = airline#themes#generate_color_map(s:airline_a_normal, s:airline_b_normal, s:airline_c_normal)
