@@ -19,7 +19,13 @@ function! s:init()
   let s:airline_initialized = 1
 
   call airline#extensions#load()
-  call airline#init#sections()
+
+  if exists('g:airline_section_override_func')
+    let Fn = function(g:airline_section_override_func)
+    call Fn()
+  else
+    call airline#init#sections()
+  endif
 
   let s:theme_in_vimrc = exists('g:airline_theme')
   if s:theme_in_vimrc
