@@ -182,8 +182,18 @@ function! airline#extensions#tabline#title(n)
     let title = TabooTabTitle(a:n)
   endif
 
+  " Error detected while processing function airline#extensions#tabline#title[28]..airline#extensions#tabline#get_buffer_name[3]..airline#extensions#tabline#formatters#webdevicons#format:
+  " line    2:
+  " E117: Unknown function: airline#extensions#tabline#formatters#airline#extensions#tabline#formatters#unique_tail_improved#format#format
+
+  " Error detected while processing function airline#extensions#tabline#get[26]..airline#extensions#tabline#tabs#get[72]..311[38]..310[2]..<SNR>142_tabline_evaluated_length[1]..<SNR>142_evaluate_tabline[2]..airline#extensions#tabline#title[31]..airline#extensions#tabline#get_buffer_name[
+  " 3]..airline#extensions#tabline#formatters#webdevicons#format:
+  " line    2:
+  " E117: Unknown function: airline#extensions#tabline#formatters#airline#extensions#tabline#formatters#unique_tail_improved#format#format
+
   if empty(title) && exists('*gettabvar')
     let title = gettabvar(a:n, 'title')
+    " return gettabvar
   endif
 
   let formatter = get(g:, 'airline#extensions#tabline#tabtitle_formatter')
